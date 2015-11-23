@@ -1,25 +1,25 @@
 import XCTest
 
 class xctestSampleTests: XCTestCase {
-    // define for parametarized test
-    struct ParametarizedStruct {
+    // define for parameterized test
+    struct ParameterizedStruct {
         var (one, two, expected): (Int, Int, Int)
     }
-    func parametarized(params: [ParametarizedStruct], _ block: (ParametarizedStruct) -> Void) {
+    func parameterized(params: [ParameterizedStruct], _ block: (ParameterizedStruct) -> Void) {
         for param in params {
             block(param);
         }
     }
 
-    func testParametarizedTesting() {
+    func testParameterizedTesting() {
         // define parameters
-        let data: [ParametarizedStruct] = [
-            ParametarizedStruct(one: 1, two: 2, expected: expectedMethod()),
-            ParametarizedStruct(one: 3, two: EnumSample.Zero.rawValue, expected: 3)
+        let data: [ParameterizedStruct] = [
+            ParameterizedStruct(one: 1, two: 2, expected: expectedMethod()),
+            ParameterizedStruct(one: 3, two: EnumSample.Zero.rawValue, expected: 3)
         ]
 
         // Set test case as block case
-        parametarized(data, {
+        parameterized(data, {
             (paramStruct) in
 
             // describe test cases
